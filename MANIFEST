@@ -1,0 +1,7 @@
+Changes
+MANIFEST
+Makefile.PL
+README
+lib/XTerm/Conf.pm
+t/00-load.t
+xterm-conf

@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+
+use XTerm::Conf;
+xterm_conf(@ARGV);
