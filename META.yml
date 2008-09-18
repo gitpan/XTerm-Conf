@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                XTerm-Conf
-version:             0.02
+version:             0.03
 abstract:            change configuration of a running xterm
 license:             ~
 author:              
