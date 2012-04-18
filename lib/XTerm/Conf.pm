@@ -1,10 +1,9 @@
 # -*- perl -*-
 
 #
-# $Id: Conf.pm,v 1.17 2009/07/14 05:27:13 eserte Exp $
 # Author: Slaven Rezic
 #
-# Copyright (C) 2006,2008,2009 Slaven Rezic. All rights reserved.
+# Copyright (C) 2006,2008,2009,2012 Slaven Rezic. All rights reserved.
 # This program is free software; you can redistribute it and/or
 # modify it under the same terms as Perl itself.
 #
@@ -22,7 +21,7 @@ use 5.006; # qr, autovivified filehandles
 use strict;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
 
-$VERSION = '0.07';
+$VERSION = '0.07_50';
 
 require Exporter;
 @ISA = qw(Exporter);
@@ -237,7 +236,7 @@ sub xterm_conf_string {
 
 sub xterm_conf {
     return if !$ENV{TERM};
-    return if $ENV{TERM} !~ m{^xterm};
+    return if $ENV{TERM} !~ m{^(xterm|rxvt)};
     my $rv = xterm_conf_string(@_);
     local $| = 1;
     print $rv;
@@ -337,8 +336,8 @@ XTerm::Conf - change configuration of a running xterm
 =head2 xterm_conf(I<options ...>)
 
 The xterm_conf function (exported by default) checks first if the
-current terminal looks like an xterm (by looking at the C<TERM>
-environment variable) and prints the escape sequences for the
+current terminal looks like an xterm or rxvt (by looking at the
+C<TERM> environment variable) and prints the escape sequences for the
 following options:
 
 =over
@@ -610,6 +609,6 @@ Slaven ReziE<0x107>
 
 =head1 SEE ALSO
 
-L<xterm-conf>, L<xterm(1)>, L<Term::Title>.
+L<xterm-conf>, L<xterm(1)>, L<rxvt(1)>, L<Term::Title>.
 
 =cut

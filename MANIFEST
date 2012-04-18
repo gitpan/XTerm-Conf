@@ -8,3 +8,6 @@ t/10-xterm.pl
 t/10-xterm.t
 t/11-xterm.pl
 xterm-conf
+.gitignore
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
